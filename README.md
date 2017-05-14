@@ -18,15 +18,43 @@ Add css and js files to your project:
     <script type="text/javascript" src="splitter.js"></script>
     <link rel="stylesheet" type="text/css" href="splitter.css"/>
 
-Then add horizontally_divided or vertically_divided class to the element you want splitted
+Then add vertically_divided class to the element you want splitted
 
-    <div class="vertically_divided">
+    <div class="vertically_divided custom-class">
         <div>Left</div>
         <div>Right</div>
     </div>
+    <script>
+        splitMe.init('custom-class', 50);
+    </script>
 
 The element you are adding the class to must have two first-level div elements in it, which will become left
 and right parts of split container
+As now you can specify percentage of first div width, which is given as second parameter to splitMe.init,
+the first parameter is a custom class to be added to parent div to distinguish if there are multiple instance of splitter.
+
+Why I Changed Code
+---
+For my project (http://cnclessons.com/) I have to make three panes of same width, So I made these changes
+
+
+    <div class="vertically_divided custom-class">
+        <div>
+            <div>Left</div>
+        </div>    
+        <div class="vertically_divided custom-sub-class">
+            <div>Left</div>
+            <div>Right</div>
+        </div>
+    </div>
+    
+    <script>
+        splitMe.init('custom-class', 33);
+        splitMe.init('custom-sub-class', 50);
+    </script>
+
+
+this will create three same size panes.
 
 Changing appearance
 ---
