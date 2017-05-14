@@ -1,6 +1,7 @@
 Splitter
 ===
 
+[New Demo (Multi panes)](https://helmanjr.github.io/splitter/)
 [Demo](http://andrienko.github.io/splitter/)
 
 Splitter is a small (~3KB minifyed) JS script with **no dependencies** to create containers splitted horizontally or vertically
