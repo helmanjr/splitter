@@ -2,27 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Splitter</title>
-    <script type="text/javascript" src="splitter.min.js"></script>
+    <title>Splitter - Multi Same Size Panes</title>
+    <script type="text/javascript" src="splitter.js"></script>
     <link rel="stylesheet" type="text/css" href="splitter.css"/>
 </head>
 <body>
-
-    <div id="data"></div>
-
-    <div class="vertically_divided" style="height: 500px;border:5px solid #888;">
-        <div class="horizontally_divided">
-            <div>Hello.</div>
-            <div>Hey, you! Yes, you!</div>
+    <div class="vertically_divided custom-class" style="height: 500px;border:5px solid #888;">
+        <div>
+            <div>Pane 1</div>            
         </div>
-        <div class="vertically_divided">
-            <div>Hello.</div>
-            <div class="horizontally_divided">
-                <div>Hello.</div>
-                <div>Hey, you! Yes, you!</div>
-            </div>
+        <div class="vertically_divided custom-sub-class">
+            <div>Pane 2</div>
+            <div>Pane 3 </div>
         </div>
     </div>
-
+    <script>
+    splitMe.init('custom-class', 33);
+    splitMe.init('custom-sub-class', 50);
+</script>
 </body>
 </html>
