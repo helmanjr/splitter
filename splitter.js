@@ -96,8 +96,8 @@ var splitMe = {
             element.a.css({bottom:ap,top:0, left:0, right:0});
         }
     },
-    init : function(){
-        splitMe.resizes=NodeListAsArray(document.querySelectorAll('.vertically_divided')).
+    init : function(element, percent){
+        splitMe.resizes=NodeListAsArray(document.querySelectorAll('.vertically_divided.' + element)).
             concat(NodeListAsArray(document.querySelectorAll('.horizontally_divided')));
 
         splitMe.resizes.forEach(function(elem){
@@ -121,7 +121,7 @@ var splitMe = {
             }
 
             elem.a = a;elem.b = b;
-            elem.percent = 50;
+            elem.percent = percent;
 
             var divider = document.createElement('div');
             divider.className = v?'divider_vertical':'divider_horizontal';
@@ -154,8 +154,13 @@ var splitMe = {
 
 };
 
+/*
+make a call from your javascript code
+splitMe.init('content-wrapper', 50);
+*/
 
 
-addEvent(window,'load',function () {
+//commented below
+/*addEvent(window,'load',function () {
     splitMe.init();
-});
+});*/
